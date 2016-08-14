@@ -50,7 +50,7 @@ then
 fi
 
 # Check issued database for entry
-grep 'CN=work' $serverdir/pki/index.txt >/dev/null
+grep "CN=$clientname" $serverdir/pki/index.txt >/dev/null
 if [ "$?" -eq "0" ];
 then
   echo "PKI database contains entry. Use 'sed -i '/CN=$clientname/d' $serverdir/pki/index.txt' to remove."
